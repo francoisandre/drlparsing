@@ -1,0 +1,40 @@
+/**
+	@name: RAN_C_001
+	@noyau: 16.00.00
+	@evenements: TD_EVT
+	@date_debut_validite: d1
+	@date_fin_validite: d2
+	@populations: STAGIAIRE
+	@severite: MAJEUR
+	@libelle: Le truc est sensible...
+	@commentaire: Elle est bonne la blanquette
+*/
+
+@Toto
+rule Bootstrap
+    when
+        f : XFibonacci( sequence == 1 || == 2, value == -1 ) // multi-restriction
+    then 
+        modify ( f ){ value = 1 };
+        System.out.println( f.sequence + " == " + f.value );
+end
+
+/**
+	@name: RAN_C_001
+	@noyau: 16.00.00
+	@evenements: TD_EVT
+	@date_debut_validite: d1
+	@date_fin_validite: d2
+	@populations: STAGIAIRE
+	@severite: MAJEUR
+	@libelle: Le truc est sensible...
+	@commentaire: Elle est bonne la blanquette
+*/
+@Toto2
+rule Bootstrap2
+    when
+        f : RFibonacci( sequence == 1 || == 2, value == -1 ) // multi-restriction
+    then 
+        modify ( f ){ value = 1 };
+        System.out.println( f.sequence + " == " + f.value );
+end

@@ -1,0 +1,16 @@
+// Coucou
+/*
+ffff
+*/
+
+rule Bootstrap
+@Toto(dddd)
+@Tutu(ssss)
+@BugReport(severity=10, assignedTo="Harry")
+@DefaultMessage("Here is a long message <br/>")
+    when
+        f : Fibonacci( sequence == 1 || == 2, value == -1 ) // multi-restriction
+    then 
+        modify ( f ){ value = 1 };
+        System.out.println( f.sequence + " == " + f.value );
+end
